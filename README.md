@@ -13,10 +13,12 @@ Nothing currently implemented yet.
 
 ## Dependencies
 
-
+#### Compilers
 Go 1.16
-Gcc 10.3.0
+gcc 10.3.0
 
+#### Libaries
+cairo-1.17.4
 
 ## Tech Stack
 
