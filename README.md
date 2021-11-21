@@ -17,8 +17,9 @@ Nothing currently implemented yet.
 Go 1.16
 gcc 10.3.0
 
-#### Libaries
-cairo-1.17.4
+#### Libaries and Other
+GTK (libgtk-3-0)
+pkg-config 0.29.1+
 
 ## Tech Stack
 
