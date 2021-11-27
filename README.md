@@ -13,10 +13,13 @@ Nothing currently implemented yet.
 
 ## Dependencies
 
-
+#### Compilers
 Go 1.16
-Gcc 10.3.0
+gcc 10.3.0
 
+#### Libaries and Other
+GTK (libgtk-3-0)
+pkg-config 0.29.1+
 
 ## Tech Stack
 
