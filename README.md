@@ -5,8 +5,6 @@ The goal of this project is to have a simulator that can allow the user to creat
 
 As the project grows I will expand this documentation.  There will be some lag as I tend to have the habit of delaying writing to docs in my personal programming until I am satisfied with a feature and plan to keep it.
 
-
-
 ## Installation
 
 Nothing currently implemented yet.
@@ -14,7 +12,6 @@ Nothing currently implemented yet.
 ## Dependencies
 
 #### Compilers
-Go 1.16
 gcc 10.3.0
 
 #### Libaries and Other
@@ -23,11 +20,11 @@ pkg-config 0.29.1+
 
 ## Tech Stack
 
-I will be using Go and C to implement this application.  These low level languages will ensure performance for the simulator even if additional features are added on.  I choose these two rather than others (or just one itself) mainly just to get practice in both those langauges specifically.  
+I will be C to implement this application.  I choose it rather than others (or higher-level languages that would have worked just as well) mainly just to get practice in C specifically.  Although since it is implemented in such a low level, performance should be good even with any additional features added on.
 
-To get into specifics, I chose to use C for the GUI of this application, as the C ecosystem just had way better and more documented options.  Many GUI Go libaries were just not well supported.  
+To get into specifics, I chose GTK as the libary for the GUI because of my familiarity with a very similar Java libary.  
 
-For now, Go will run everything else, although as I add features I do expect once again to run into situations where C is the better option because of library support.
+At one point I was considering adding Go just for more practice.  For now I can't think of a real reason to add it that would make sense, but it is possible something may be implemented in Go in the future.
 
 ## Bugs
 
