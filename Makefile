@@ -8,10 +8,9 @@ run:
 
 
 c_run:
-	cd internal/gui && rm *.out
-	gcc lifegui.c `pkg-config --cflags gtk+-3.0 --libs gtk+-3.0`
-	./a.out
+	cd src && gcc life.c `pkg-config --cflags gtk+-3.0 --libs gtk+-3.0` -o life.out
+	cd src && ./life.out
 
 
 c_build:
-	gcc lifegui.c `pkg-config --cflags gtk+-3.0 --libs gtk+-3.0`
+	cd src && gcc life.c `pkg-config --cflags gtk+-3.0 --libs gtk+-3.0` -o draw.out
