@@ -1,0 +1,2 @@
+#define MATRIX_HEIGHT 100
+#define MATRIX_LENGTH 100
