@@ -87,6 +87,3 @@ gint main(int argc,char *argv[])
     gtk_main ();
     return 0;
 }
-
-// https://www.cairographics.org/samples/
-// gtk gcc testcase.c `pkg-config --cflags gtk+-3.0 --libs gtk+-3.0` -o draw
