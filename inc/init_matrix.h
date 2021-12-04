@@ -1,27 +1,26 @@
 #include "const.h"
 
 
-struct Matrix {
-        int data[MATRIX_HEIGHT][MATRIX_LENGTH];
-};
+int** init_matrix(int height, int length) {
 
-// Matrix* init() {
+        // alloc the matrix (array of arrays) since returns ptr
+        int** matrix = (int **)malloc(height * sizeof(int*));
+        for(int i = 0; i<height; i++) {
+                matrix[i] = (int *)malloc(length * sizeof(int));
+        }
 
-//     // have to dynamically alloc because returning pointer
-//     // Matrix* mat = ();
+        for(int i = 0; i<height; i++) {
 
-//     for(int i = 0; i<MATRIX_HEIGHT; i++) {
+                for(int j = 0; j<length; j++) {
 
-//         for(int j = 0; j<MATRIX_LENGTH; j++) {
+                        // creating checkered pattern by having mod j and mod i compared
+                        if( j % 2 == i % 2) {
+                                matrix[i][j] = 1;
+                        } else {
+                                matrix[i][j] = 0;
+                        }
+                }
+        }
 
-//             if( j % 2 == 0) {
-//                 mat[i][j] = 0;
-//             } else {
-//                 mat[i][j] = 1;
-//             }
-
-//         }
-
-//     }
-
-// }
+        return matrix;
+}
