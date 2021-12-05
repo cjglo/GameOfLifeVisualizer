@@ -13,9 +13,19 @@ int** init_matrix(int height, int length) {
 
                 for(int j = 0; j<length; j++) {
 
-                        // creating checkered pattern by having mod j and mod i compared
-                        if( j % 2 == i % 2) {
+                        // for testing purposes, making a pre-defined structure
+                        if(i == 10 && j == 10) {
+
                                 matrix[i][j] = 1;
+                                matrix[i-1][j-1] = 1;
+                                matrix[i-2][j-2] = 1;
+                                matrix[i][j-1] = 1;
+                                matrix[i-3][j-2] = 1;
+                                matrix[i-1][j] = 1;
+                                matrix[i-3][j] = 1;
+                                matrix[i][j-2] = 1;
+                                matrix[i-4][j-3] = 1;
+
                         } else {
                                 matrix[i][j] = 0;
                         }

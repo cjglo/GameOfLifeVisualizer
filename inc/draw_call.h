@@ -1,10 +1,10 @@
 #include <gtk/gtk.h>
 #include "init_matrix.h"
+#include "./draw_subprocesses/calc_turn.h"
 
 gboolean draw_callback (GtkWidget *widget, cairo_t *cr, gpointer data)
 {
     int** mat = data; // import matrix alloced in main
-
 
     guint width, height;
     GdkRGBA color;
@@ -50,6 +50,9 @@ gboolean draw_callback (GtkWidget *widget, cairo_t *cr, gpointer data)
 
     }
     cairo_stroke (cr);
+
+    // calculate next turn before exitting so next draw is up to date
+    game_of_life_turn_calc(mat, MATRIX_HEIGHT, MATRIX_LENGTH);
 
     gtk_style_context_get_color (context, gtk_style_context_get_state (context), &color);
     gdk_cairo_set_source_rgba (cr, &black);
