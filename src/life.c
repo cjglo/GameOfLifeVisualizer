@@ -26,6 +26,13 @@ gint main(int argc,char *argv[])
     g_signal_connect (G_OBJECT (drawing_area), "draw", G_CALLBACK (draw_callback), mat); // draw call, spring board for all logic
     gtk_widget_show_all (window);
     g_timeout_add(1000, (GSourceFunc)timeout, window);
-    gtk_main ();
+    gtk_main (); // loop that runs gtk
+    
+    // free matrix
+    for(int i = 0; i<MATRIX_HEIGHT; i++) {
+        free(mat[i]);
+    }
+    free(mat);
+
     return 0;
 }
