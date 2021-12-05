@@ -1,6 +1,5 @@
 #include "const.h"
 
-
 int** init_matrix(int height, int length) {
 
         // alloc the matrix (array of arrays) since returns ptr

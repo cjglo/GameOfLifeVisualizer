@@ -7,14 +7,18 @@ As the project grows I will expand this documentation.  There will be some lag a
 
 ## Installation
 
-Nothing currently implemented yet.
+Currently I have not written any scripts, so installation remains the same as compiling the program yourself from my source code.
+
+Make sure the dependecnies are installed then run the Makefile commands yourself or copy the gcc compiler command and run it while in the directory of the `life.c` file.
 
 ## Dependencies
 
 #### Compilers
+
 gcc 10.3.0
 
 #### Libaries and Other
+
 GTK (libgtk-3-0)
 pkg-config 0.29.1+
 
