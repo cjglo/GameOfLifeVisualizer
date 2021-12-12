@@ -7,7 +7,7 @@
 */
 int check_if_neighbors_alive(int i, int j, int** m, int rows, int columns);
 
-void game_of_life_turn_calc(int** m, int rows, int columns) {
+void calculate_life_turn(int** m, int rows, int columns) {
 
 	for(int i = 0; i<rows; i++) {
 

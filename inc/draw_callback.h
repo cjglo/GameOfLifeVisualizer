@@ -52,7 +52,7 @@ gboolean draw_callback (GtkWidget *widget, cairo_t *cr, gpointer data)
     cairo_stroke (cr);
 
     // calculate next turn before exitting so next draw is up to date
-    game_of_life_turn_calc(mat, MATRIX_HEIGHT, MATRIX_LENGTH);
+    calculate_life_turn(mat, MATRIX_HEIGHT, MATRIX_LENGTH);
 
     gtk_style_context_get_color (context, gtk_style_context_get_state (context), &color);
     gdk_cairo_set_source_rgba (cr, &black);
