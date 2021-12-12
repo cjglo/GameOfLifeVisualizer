@@ -1,10 +1,14 @@
+#ifndef __DRAW_CALL_H__
+#define __DRAW_CALL_H__
+
+
 #include <gtk/gtk.h>
 #include "init_matrix.h"
 #include "./draw_subprocesses/calc_turn.h"
 
 gboolean draw_callback (GtkWidget *widget, cairo_t *cr, gpointer data)
 {
-    int** mat = data; // import matrix alloced in main
+    struct matrix* mat = data; // import matrix alloced in main
 
     guint width, height;
     GdkRGBA color;
@@ -34,7 +38,7 @@ gboolean draw_callback (GtkWidget *widget, cairo_t *cr, gpointer data)
                 cairo_line_to(cr, x - 10, y - 10);
 
                 // logic to see if cell is alive or dead, and color it so
-                if(mat[i][j] == 0) {
+                if(mat->data[i][j] == 0) {
                     gdk_cairo_set_source_rgba (cr, &black);
                 } else {
                     gdk_cairo_set_source_rgba (cr, &white);
@@ -52,10 +56,16 @@ gboolean draw_callback (GtkWidget *widget, cairo_t *cr, gpointer data)
     cairo_stroke (cr);
 
     // calculate next turn before exitting so next draw is up to date
-    calculate_life_turn(mat, MATRIX_HEIGHT, MATRIX_LENGTH);
+    // don't calculate if the game hasn't started
+    if(mat->game_has_started) {
+        calculate_life_turn(mat, MATRIX_HEIGHT, MATRIX_LENGTH);
+    }
 
     gtk_style_context_get_color (context, gtk_style_context_get_state (context), &color);
     gdk_cairo_set_source_rgba (cr, &black);
     cairo_fill (cr);
     return FALSE;
 }
+
+
+#endif

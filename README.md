@@ -5,11 +5,11 @@ The goal of this project is to have a simulator that can allow the user to creat
 
 As the project grows I will expand this documentation.  There will be some lag as I tend to have the habit of delaying writing to docs in my personal programming until I am satisfied with a feature and plan to keep it.
 
-## Installation
+## Installation & Running Visualizer
 
-Currently I have not written any scripts, so installation remains the same as compiling the program yourself from my source code.
+Make sure to have the dependencies installed, then git clone this repository.
 
-Make sure the dependecnies are installed then run the Makefile commands yourself or copy the gcc compiler command and run it while in the directory of the `life.c` file.
+Navigate to the root of the directory (same directory this README is) in the command line and type `make run`.  That will compile and run the program.
 
 ## Dependencies
 
