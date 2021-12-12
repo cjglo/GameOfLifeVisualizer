@@ -1,5 +1,6 @@
 #include "../inc/draw_callback.h"
 #include "../inc/selecting_cells.h"
+#include "../inc/const.h"
 
 // quick helper function to trigger draw every half second
 gboolean timeout(GtkWidget *widget)
@@ -11,7 +12,7 @@ gboolean timeout(GtkWidget *widget)
 gint main(int argc,char *argv[])
 {
     // matrix that holds game-state data
-    int** mat = init_matrix(MATRIX_HEIGHT, MATRIX_LENGTH); 
+    struct matrix* mat = init_matrix(MATRIX_HEIGHT, MATRIX_LENGTH); 
 
     // typical gtk window set-up
     GtkWidget *window, *drawing_area, *label;
@@ -39,9 +40,10 @@ gint main(int argc,char *argv[])
     
     // free matrix
     for(int i = 0; i<MATRIX_HEIGHT; i++) {
-        free(mat[i]);
+        free(mat->data[i]);
     }
-    free(mat);
+    free(mat->data); 
+    free(mat); 
 
     return 0;
 }

@@ -1,21 +1,36 @@
+#ifndef __INIT_MATRIX_H__
+#define __INIT_MATRIX_H__
+
 #include "const.h"
 
-int** init_matrix(int height, int length) {
+struct matrix* init_matrix(int height, int length) {
 
-        // alloc the matrix (array of arrays) since returns ptr
-        int** matrix = (int **)malloc(height * sizeof(int*));
+        // not necessary to dynamically allocate if I built it in main, but
+        // I want practice
+        struct matrix* m = (struct matrix*)malloc(sizeof (struct matrix));
+        if(m == NULL) {
+                exit(1); 
+        }
+
+        m->data = (int **)malloc(height * sizeof(int*));
+
         for(int i = 0; i<height; i++) {
-                matrix[i] = (int *)malloc(length * sizeof(int));
+                m->data[i] = (int *)malloc(length * sizeof(int));
         }
 
         for(int i = 0; i<height; i++) {
 
                 for(int j = 0; j<length; j++) {
 
-                        matrix[i][j] = 0;
+                       m->data[i][j] = 0;
                         
                 }
         }
 
-        return matrix;
+        m->game_has_started = FALSE; 
+
+        return m;
 }
+
+
+#endif
